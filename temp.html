@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="theme-color" content="#262f37" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Watch Movies and TV Shows online for FREE" />
+    <meta name="keywords" content="movies, tv shows, streaming, download, series, anime" />
+    <title>TikiMovie Database</title>
+    <meta name="description" content="Watch Movies and TV Shows online for FREE" />
+    <link rel="canonical" href="/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TikiMovie Database" />
+    <meta property="og:description" content="Watch Movies and TV Shows online for FREE" />
+    <meta property="og:site_name" content="TikiMovie Database" />
+    <meta property="fb:app_id" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="TikiMovie Database - Watch Movies and TV Shows online for FREE" />
+    <meta name="twitter:title" content="TikiMovie Database - Watch Movies and TV Shows online for FREE" />
+    <meta name="twitter:image" content="/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="main.css" type="text/css" media="all" />
+  </head>
+  <body class="home blog">
+    <div id="fondo_dt" class="fondo_dt"></div>
+    <div id="dt_contenedor">
+      <div id="contenedor">
+        <div class="module layout1">
+          <div class="content">
+            <header>
+              <h2>TikiMovie Database</h2>
+              <span>
+                <a href="#">TV Shows</a>
+              </span>
+            </header>
+            <div class="items">
+			
+<script>
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET","https://dl.dropboxusercontent.com/s/hi5bdyjvjrh3fid/videos.xml",false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML; 
+    var x = xmlDoc.getElementsByTagName("source");
+    for (i = 0; i < x.length; i++) { 
+		
+	document.write("<article class='item movies'><div class='poster'><a target='_blank' rel='nofollow' href='");
+	document.write(x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue);
+	document.write("'><img loading='lazy' src='");
+	document.write(x[i].getElementsByTagName("img")[0].childNodes[0].nodeValue);
+	document.write("' alt='");
+	document.write(x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+	document.write("' /></a></div><div class='data'><h3><a target='_blank' rel='nofollow' href='");
+	document.write(x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue);
+	document.write("'>");
+	document.write(x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+	document.write("</a></h3><span>");
+	document.write(x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue);
+	document.write("</span></div></article>");
+	
+    }
+</script>
+
+
+
+
+			  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="oscuridad">
+	
+	<br><marquee>Recovered archive. Currently for streaming only. Working on mobile (android) but not all on iOS. ADs keep this database active. Sorry if inconvenience.</marquee><br>
+	<br>
+	
+	</div>
+
+  </body>
+  
+ 
+
+<!-- Scrolling Title -->
+<script>
+var repeat=1 
+var title=document.title+" "
+var leng=title.length
+var start=1
+function titlemove() {
+titl=title.substring(start, leng) + title.substring(0, start)
+document.title=titl
+start++
+if (start==leng+1) {
+start=0
+if (repeat==0)
+return
+}
+setTimeout("titlemove()",80)
+}
+if (document.title)
+titlemove()
+</script>	
+
+<div style="clear: both; height: 20px; text-align: center;"></div>
+
+<center>
+<p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> TikiMovie Database</p>
+</center>
+
+</html>
