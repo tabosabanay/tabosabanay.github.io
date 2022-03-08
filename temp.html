@@ -2,22 +2,22 @@
 <html lang="en-US">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+    <link rel="apple-touch-icon" href="https://i.imgur.com/nEkR3vB.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://i.imgur.com/Nlll00U.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://i.imgur.com/kbAmaoC.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://i.imgur.com/QBoOzp8.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://i.imgur.com/9mQxfwE.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://i.imgur.com/SMbqXMR.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://i.imgur.com/9ERYOIR.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://i.imgur.com/z77esPw.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.imgur.com/ptZaDK3.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="theme-color" content="#262f37" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://i.imgur.com/Nlll00U.png" type="image/x-icon" />
+	<link rel="icon" href="https://i.imgur.com/Nlll00U.png" type="image/x-icon" />
     <meta name="description" content="Watch Movies and TV Shows online for FREE" />
     <meta name="keywords" content="movies, tv shows, streaming, download, series, anime" />
     <title>TikiMovie Database</title>
@@ -32,10 +32,13 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:description" content="TikiMovie Database - Watch Movies and TV Shows online for FREE" />
     <meta name="twitter:title" content="TikiMovie Database - Watch Movies and TV Shows online for FREE" />
-    <meta name="twitter:image" content="/apple-touch-icon-180x180.png" />
+    <meta name="twitter:image" content="https://i.imgur.com/ptZaDK3.png" />
     <link rel="stylesheet" href="main.css" type="text/css" media="all" />
   </head>
-  <body class="home blog">
+  <body class="home blog" >
+  
+ 
+  
     <div id="fondo_dt" class="fondo_dt"></div>
     <div id="dt_contenedor">
       <div id="contenedor">
@@ -47,42 +50,22 @@
                 <a href="#">TV Shows</a>
               </span>
             </header>
-            <div class="items">
+            <div class="items" id="items">
 			
-<script>
-    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    }
-    else {
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.open("GET","https://dl.dropboxusercontent.com/s/hi5bdyjvjrh3fid/videos.xml",false);
-    xmlhttp.send();
-    xmlDoc = xmlhttp.responseXML; 
-    var x = xmlDoc.getElementsByTagName("source");
-    for (i = 0; i < x.length; i++) { 
-		
-	document.write("<article class='item movies'><div class='poster'><a target='_blank' rel='nofollow' href='");
-	document.write(x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue);
-	document.write("'><img loading='lazy' src='");
-	document.write(x[i].getElementsByTagName("img")[0].childNodes[0].nodeValue);
-	document.write("' alt='");
-	document.write(x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
-	document.write("' /></a></div><div class='data'><h3><a target='_blank' rel='nofollow' href='");
-	document.write(x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue);
-	document.write("'>");
-	document.write(x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
-	document.write("</a></h3><span>");
-	document.write(x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue);
-	document.write("</span></div></article>");
+
 	
-    }
+<script type="text/javascript" src="https://dl.dropboxusercontent.com/s/jsmh883c4h2xqlr/videos.js?ver<%=DateTime.Now.Ticks.ToString()%>"></script>
+
+
+<script >
+var z = link.length;
+let text = "";
+for (i = 1; i < z; i++) { 
+text +=  "<article class='item movies'><div class='poster'><a target='_blank' rel='nofollow' href='" + link[0] + link[i] + "'><img loading='lazy' src='" + img[0] + img[i] + "' alt='" + title[i] + "' /></a></div><div class='data'><h3><a target='_blank' rel='nofollow' href='" + link[0] + link[i] + "'>"  + title[i] +  "</a></h3><span>" + year[i] + "</span></div></article>";
+}
+document.getElementById("items").innerHTML = text;
 </script>
 
-
-
-
-			  
             </div>
           </div>
         </div>
